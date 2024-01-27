@@ -1,12 +1,12 @@
 # kubera_birth
 쿠베라 생일 속성 계산기
 
+<p align="center"><img src="https://github.com/1006lem/first-blog/assets/68532437/51a6ea66-eb36-4e1f-a941-30ff24ec5303" width = "40%"></p>
 
 
-<br>
-<br>
+---
 
-### 사용법
+## 사용법
 
 #### (1) local
 app.py 실행 
