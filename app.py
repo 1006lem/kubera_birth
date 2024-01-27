@@ -1,6 +1,8 @@
 from flask import Flask,render_template,request,url_for
 import birth_attribute
 app = Flask(__name__)
+host_addr = '0.0.0.0'
+host_port = 5000
 
 @app.route('/') # 첫 화면
 def index():
@@ -9,7 +11,7 @@ def index():
 @app.route('/result',methods=['POST'])
 def result():
     print("hello")
-    result= None
+    #result= None
     if request.method =='POST':
         month = request.form['month']
         day = request.form['day']
@@ -19,9 +21,11 @@ def result():
     time = int(time)
     birth_attribute.cal_all(month,day,time)
     
-    return render_template('result.html',result = birth_attribute.get_att())
+    return render_template('result.html', result=birth_attribute.get_att())
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,
+            host=host_addr,
+            port=host_port)
 
 
